@@ -1,6 +1,6 @@
 site:
   name: StrikeSeer
-  site: 'https://www.strikeseer.com'
+  site: 'https://www.brianshao.com'
   base: '/'
   trailingSlash: false
 
@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: StrikeSeer
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/me.JPG'
+        width: 2103
+        height: 2892
     type: website
   twitter:
     handle: '@onwidget'
