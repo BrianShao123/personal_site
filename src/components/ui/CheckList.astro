@@ -1,0 +1,40 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Timeline from '~/components/ui/Timeline.astro';
+import Headline from '~/components/ui/Headline.astro';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  image = await Astro.slots.render('image'),
+  isReversed = false,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <div class:list={['flex flex-col gap-8 md:gap-12 items-center justify-center', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
+    <div class:list={['md:py-4 w-full flex flex-col items-center', { 'md:basis-1/2': image }, { 'w-full': !image }]}>
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+            container: 'text-center',
+            title: 'text-4xl lg:text-5xl',
+            ...((classes?.headline as object) ?? {}),
+        }}
+      />
+      <div class="w-full flex justify-center">
+        <Timeline items={items} isRounded={false} classes={classes?.items as Record<string, never>} />
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Header from '~/components/widgets/Header.astro';
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <Fragment slot="header">
+  <Header
+      links={[{ text: 'Home', href: '/' }]}
+      isSticky
+      showToggleTheme
+    />
+  <HeroText tagline="Contact" title="Let's Connect!" />
+  </Fragment>
+  <ContactUs
+    id="form"
+    title="Drop a message today!"
+    subtitle="You can send a question, advice, or even greeting!"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="I'll try to get back to you as soon as possible!"
+  />
+
+  <!-- Features2 Widget ************** -->
+</Layout>

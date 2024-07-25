@@ -1,0 +1,313 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import PortfolioContent from '~/components/widgets/PortfolioContent.astro';
+import { getContactPermalink } from '~/utils/permalinks';
+import Features2 from '~/components/widgets/Features2.astro';
+import CheckList from '~/components/ui/CheckList.astro';
+import MindScribe1 from '/src/assets/images/1-mind-scribe.png';
+import MindScribe2 from '/src/assets/images/2-mind-scribe.png';
+import MindScribe3 from '/src/assets/images/3-mind-scribe.png';
+import MindScribe4 from '/src/assets/images/4-mind-scribe.png';
+import MindScribe5 from '/src/assets/images/5-mind-scribe.png';
+import MindScribe6 from '/src/assets/images/6-mind-scribe.png';
+import MindScribe7 from '/src/assets/images/7-mind-scribe.png';
+import MindScribe8 from '/src/assets/images/8-mind-scribe.png';
+import MindScribe9 from '/src/assets/images/9-mind-scribe.png';
+import RedistrictReality1 from '/src/assets/images/1-redistrict-reality.jpg';
+import RedistrictReality2 from '/src/assets/images/2-redistrict-reality.png';
+import RedistrictReality3 from '/src/assets/images/3-redistrict-reality.png';
+import Resume from '/src/assets/files/Brian_Shao_Resume_2024.pdf';
+import { ReactTyped } from "react-typed";
+const metadata = {
+  title: 'My Page',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#intro' },
+        { text: 'About', href: '#about' },
+        { text: 'Portfolio', href: '#portfolio' },
+        { text: 'Goals', href: '#goals' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Github', href: 'https://github.com/BrianShao123' },
+      ]}
+      actions={[
+        {
+          text: 'Send Message',
+          href: getContactPermalink(),
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <Hero
+    id="intro"
+    title="Hi, I'm Brian"
+    actions={[{ variant: 'primary', text: 'Contact', href: getContactPermalink() }]}
+  >
+  
+    <Fragment slot="subtitle">
+      <ReactTyped 
+        client:load 
+        strings={["I'm interested in Cyber Security, Cloud Computing, and Data <br/> I have experience in Full-Stack, Database, UI, and Cloud Systems Development"]} 
+        typeSpeed={40} 
+        backSpeed={50}
+        startWhenVisible
+        backDelay={4000}
+        className="text-2xl"
+      />
+      <br/>
+      <br/>
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/shao-brian/',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'Github',
+          href: 'https://github.com/BrianShao123',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/me.JPG',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
+      <p>Welcome to my developer journey!</p>
+      <br />
+      <p>
+        I love learning about new tech and using it to solve problems in my own life. I'm an aspiring Computer Scientist learning software engineering with an interest in cybersecurity for the
+        future.
+        <br/>
+        <br/>
+        As I go about my journey, I am looking to improve my skills in various fields such as Security, Cloud Computing, and Data Analytics!
+      </p>
+      <br />
+      <p>You can find me on these platforms!</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-y-0 left-4 right-4 bg-blue-50 shadow rounded-md max-w-full dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <PortfolioContent
+    id="portfolio"
+    title="Portfolio"
+    subtitle="Below are some of my projects ranging from a variety of topics from scripts to full stack apps"
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          'We developed a comprehensive web application that provides detailed voting statistics, historical voter turnout data, and redistricting information in GeoJSON format for Arizona and Illinois. The application also includes simulations of random redistricting and other relevant statistics, empowering users to make well-informed and persuasive arguments about the fairness of current district plans.',
+      },
+      {
+        title: 'Role:',
+        description:
+          'I made key frontend design decisions to maximize the clarity and informativeness of the data presented to users. I engineered the app to be intuitive and user-friendly, ensuring that the data display did not obstruct the view of other charts and statistics. I gathered specific state statistics and information, including boundary data, and scraped state representative information. Additionally, I used Mapbox to create a clean and interactive map UI.',
+      },
+    ]}
+    slides={[
+      { src: RedistrictReality1.src, alt: 'First Slide' },
+      { src: RedistrictReality2.src, alt: 'Second Slide' },
+      { src: RedistrictReality3.src, alt: 'Third Slide' },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'View Github',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/BrianShao123/416clippers',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 1: <br /><span class="text-2xl">Redistrict Reality</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </PortfolioContent>
+
+  <PortfolioContent
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          "We created an application designed to help people express themselves freely. Our goal is to support individuals dealing with mental health issues by providing a platform where they can always find a listening ear, even if it's through AI. This app allows users to personalize their experience with customizable notebook covers featuring various patterns and colors. Users can also choose from different AI companions to converse with, making the interaction feel more personal and comforting. <br> <br> To create a familiar and inviting atmosphere, we've designed the app to resemble a physical notebook, complete with warm, soothing colors. This thoughtful design choice aims to provide a comforting alternative to the typical online forms and text boxes, offering a more human-like and engaging experience.",
+      },
+      {
+        title: 'Role:',
+        description:
+          'I played an important role in developing the notebook design for the application, advocating for the feature that allows users to fully customize their notebooks. My responsibilities included engineering and designing the user-notebook interaction, ensuring that users could seamlessly write in their notebooks and receive responses, advice, and comfort from the AI (OpenAI model). <br> <br> In addition to this, I collaborated on designing the introduction page, focusing on creating an intuitive and welcoming login and signup experience for users. My contributions aimed to enhance user engagement and provide a personalized, supportive environment within the app.',
+      },
+    ]}
+    slides={[
+      { src: MindScribe1.src, alt: 'First Slide' },
+      { src: MindScribe2.src, alt: 'Second Slide' },
+      { src: MindScribe3.src, alt: 'Third Slide' },
+      { src: MindScribe4.src, alt: 'Fourth Slide' },
+      { src: MindScribe5.src, alt: 'Fifth Slide' },
+      { src: MindScribe6.src, alt: 'Sixth Slide' },
+      { src: MindScribe7.src, alt: 'Seventh Slide' },
+      { src: MindScribe8.src, alt: 'Eighth Slide' },
+      { src: MindScribe9.src, alt: 'Ninth Slide' },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'View Github',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/birajghimire/SBUHacks2024',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 2: <br /><span class="text-2xl">Mind Scribe</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </PortfolioContent>
+
+  <Steps
+    id="experience"
+    title="Experience"
+    items={[
+      {
+        title:
+          'Software Engineering Fellow <br /> <span class="font-normal">HeadStarter Ai, New York, NY</span> <br /> <span class="text-sm font-normal">July, 2024 - Present </span>',
+        description: `Gained hands-on experience in various design software and tools`,
+        icon: 'tabler:keyboard',
+        tags: ['NextJS', 'Openai'],
+      },
+      {
+        title:
+          'Research Assistant <br /> <span class="font-normal">Stony Brook University, Stony Brook, NY</span> <br /> <span class="text-sm font-normal">January 2024 - May 2024</span>',
+        description: `Researched eBPF’s impact on Linux security and systems, laying foundational knowledge for practical applications <br /> Set up eBPF on Ubuntu, demonstrating Linux CLI and BpfTools proficiency for development and testing <br /> Developing dual applications targeting buffer overflow protection: a user-space program susceptible to attacks, and
+        a kernel-space eBPF program that efficiently validates memory writes, ensuring enhanced system integrity`,
+        icon: 'tabler:microscope',
+        tags: ['linux', 'extended berkeley packet filter (ebpf)', 'c'],
+      },
+      {
+        title:
+          'Research Assistant <br /> <span class="font-normal">Stony Brook University, Stony Brook, NY</span> <br /> <span class="text-sm font-normal">August 2023 - May 2024 </span>',
+        description: `Help facilitate bi-weekly meetings by setting up lab equipment to ensure a smooth flow of presentations<br />Configured Secure Shell (SSH) for remote connections to laboratory computers, optimizing the environment with
+        Bash as the default shell to streamline workflow and improve remote operational efficiency by 20%<br />Exhibited proficiency in Windows operating systems by effectively managing access privileges and executing
+        advanced shell commands, thereby maintaining system integrity, enhancing security, and improving efficiency<br /> Worked with Bitcoin python libraries to parse and readdress 618,000,000 Bitcoin transactions`,
+        icon: 'tabler:microscope',
+        tags: ['python', 'bitcoin full core', 'git', 'bash'],
+      },
+    ]}
+    classes={{ container: 'max-w-3xl bg-blue-50 shadow rounded-md dark:bg-transparent' }}
+  />
+
+  <Steps
+    id="education"
+    title="Education"
+    items={[
+      {
+        title: `Bachelor's of Science in Computer Science <br /> <span class="font-normal">Stony Brook University</span> <br /> <span class="text-sm font-normal">2021 - 2024</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `High School Diploma<br /> <span class="font-normal">High School for Math, Science, and Engineering</span> <br /> <span class="text-sm font-normal">2017 - 2021</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <CheckList
+    id="goals"
+    title="Goals"
+    items={[
+      {
+        title: `Deploy Personal Website <br /> <span class="font-normal">Learn how to deploy, maintain, expand, and optimize web applications</span> <br /> <span class="text-sm font-normal">Start: July 2024</span>`,
+        icon: 'tabler:check',
+      },
+      {
+        title: `Write First Blog<br /> <span class="font-normal">Learn and write about an interesting technology</span> <br /> <span class="text-sm font-normal">Start: August 2024</span>`,
+        icon: 'tabler:x',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+    <CallToAction
+    id="resume"
+    title="Resume Download"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Resume',
+        href: Resume,
+        icon: 'tabler:download',
+        download: 'Brian Shao Resume 2024.pdf',
+      },
+    ]}
+  />
+
+  <Features2
+    title="More to come in the future!"
+    subtitle="What to expect? More projects, blogs about interesting tech I find, and more pictures!"
+    items={[
+      {
+        title: 'Projects',
+        description:
+          'I’m excited to share more projects that highlight ideas brought to life, each serving a purpose and helping me grow as a developer. Moving forward, I aim to explore and utilize a wider array of unique and diverse tools.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Blogs',
+        description:
+          'I want to actively immerse myself in learning new technologies. Writing blogs allows me to share my voice and insights on the ever-evolving tech landscape.',
+        icon: 'tabler:rss',
+      },
+      {
+        title: 'Pictures',
+        description:
+          'I plan to share more photos to visually showcase my work. A picture can tell a story that resonates with everyone, regardless of race, age, perspective, or background.',
+        icon: 'tabler:photo-scan',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+</Layout>
