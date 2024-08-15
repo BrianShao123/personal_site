@@ -23,6 +23,14 @@ import RedistrictReality2 from '/src/assets/images/2-redistrict-reality.png';
 import RedistrictReality3 from '/src/assets/images/3-redistrict-reality.png';
 import Resume from '/src/assets/files/Brian_Shao_Resume_2024.pdf';
 import { ReactTyped } from "react-typed";
+import StockSense1 from '/src/assets/images/1-stocksense.png';
+import StockSense2 from '/src/assets/images/2-stocksense.png';
+import StockSense3 from '/src/assets/images/3-stocksense.png';
+import StockSense4 from '/src/assets/images/4-stocksense.png';
+import StockSense5 from '/src/assets/images/5-stocksense.png';
+import StockSense6 from '/src/assets/images/6-stocksense.png';
+
+
 const metadata = {
   title: 'Brian Shao - Blogs and Projects',
   ignoreTitleTemplate: true,
@@ -196,6 +204,46 @@ const metadata = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Project 2: <br /><span class="text-2xl">Mind Scribe</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </PortfolioContent>
+
+    <PortfolioContent
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          "I developed this application with a focus on creating a user-friendly inventory tracker, aiming to move beyond the limitations of older systems. My goal was to design a clean, intuitive interface that makes navigation effortless, while also ensuring comprehensive tracking of all operations for better accountability. The app offers data-driven insights through simple graphs, such as item proportions and profit charts, which help in further analysis. Additionally, I included quality-of-life features like image recognition for unidentified items, in-place edits, status indicators for inventory health, profit calculations, and export options to Excel. Looking ahead, I plan to incorporate AI for enhanced data analysis and item management, potentially leveraging Retrieval-Augmented Generation (RAG) technology.",
+      },
+      {
+        title: 'Role:',
+        description:
+          'I took on the challenge of designing and developing this application from scratch. Although I initially started with a template, I quickly realized that the backend needed a complete overhaul to support real-time updates effectively. I chose Firebase Firestore for its efficient data management and implemented Firebase Authentication to secure the app. I also set up security rules to ensure that only authorized users could access sensitive data, applying principles of defense in depth and access control. This project was a significant learning experience in security practices, and I look forward to applying these lessons in future projects.',
+      },
+    ]}
+    slides={[
+      { src: StockSense1.src, alt: 'First Slide' },
+      { src: StockSense2.src, alt: 'Second Slide' },
+      { src: StockSense3.src, alt: 'Third Slide' },
+      { src: StockSense4.src, alt: 'Fourth Slide' },
+      { src: StockSense5.src, alt: 'Fifth Slide' },
+      { src: StockSense6.src, alt: 'Sixth Slide' },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'View Github',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/BrianShao123/stock-sense',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 2: <br /><span class="text-2xl">StockSense</span>
       </h3>
     </Fragment>
 
